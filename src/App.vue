@@ -1,6 +1,5 @@
 <script setup>
-import ProductSyncForm from './components/ProductSyncForm.vue'
-import ProductTable from './components/ProductTable.vue'
+import ProductListing from './components/ProductListing.vue'
 </script>
 
 <template>
@@ -20,8 +19,7 @@ import ProductTable from './components/ProductTable.vue'
       <div class="page-body">
         <div class="container-xl">
           <!-- Content here -->
-          <ProductSyncForm />
-          <ProductTable />
+          <ProductListing />
         </div>
       </div>
     </div>

@@ -36,6 +36,10 @@ const getProducts = async (page = 1) => {
 }
 
 onMounted(getProducts)
+
+defineExpose({
+  getProducts
+})
 </script>
 
 <template>
