@@ -1,47 +1,29 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import ProductSyncForm from './components/ProductSyncForm.vue'
+import ProductTable from './components/ProductTable.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
   <main>
-    <TheWelcome />
+    <div class="page-wrapper">
+      <!-- Page header -->
+      <div class="page-header d-print-none">
+        <div class="container-xl">
+          <div class="row g-2 align-items-center">
+            <div class="col">
+              <h1 class="page-title">Product Listing</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Page body -->
+      <div class="page-body">
+        <div class="container-xl">
+          <!-- Content here -->
+          <ProductSyncForm />
+          <ProductTable />
+        </div>
+      </div>
+    </div>
   </main>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
