@@ -2,19 +2,31 @@
 import { ref, onMounted, watch } from 'vue'
 import axios from 'axios'
 import { Bootstrap5Pagination } from 'laravel-vue-pagination'
+import debounce from 'lodash.debounce'
 
 const products = ref([])
 const pagination = ref([])
 const perPage = ref(10)
+const searchValue = ref()
 
-watch(perPage, () => {
-  getProducts()
-})
+watch(
+  perPage,
+  debounce(() => {
+    getProducts()
+  }, 500)
+)
+
+watch(
+  searchValue,
+  debounce(() => {
+    getProducts()
+  }, 500)
+)
 
 const getProducts = async (page = 1) => {
   try {
     let response = await axios.get(
-      `http://localhost/api/product?page=${page}&perPage=${perPage.value}`
+      `http://localhost/api/product?page=${page}&perPage=${perPage.value}&search=${searchValue.value}`
     )
     pagination.value = response.data
     products.value = pagination.value.data
@@ -50,7 +62,12 @@ onMounted(getProducts)
           <div class="ms-auto text-secondary">
             Search:
             <div class="ms-2 d-inline-block">
-              <input type="text" class="form-control form-control-sm" aria-label="Search invoice" />
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                v-model="searchValue"
+                aria-label="Search invoice"
+              />
             </div>
           </div>
         </div>
