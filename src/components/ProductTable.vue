@@ -7,7 +7,7 @@ import debounce from 'lodash.debounce'
 const products = ref([])
 const pagination = ref([])
 const perPage = ref(10)
-const searchValue = ref()
+const searchValue = ref('')
 
 watch(
   perPage,
@@ -77,25 +77,7 @@ onMounted(getProducts)
           <thead>
             <tr>
               <th>No</th>
-              <th class="w-1">
-                Product ID
-                <!-- Download SVG icon from http://tabler-icons.io/i/chevron-up -->
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="icon icon-sm icon-thick"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M6 15l6 -6l6 6"></path>
-                </svg>
-              </th>
+              <th>Product ID</th>
               <th>Type</th>
               <th>Brand</th>
               <th>Model</th>
