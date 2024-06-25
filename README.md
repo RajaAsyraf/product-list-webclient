@@ -1,6 +1,6 @@
 # product-list-webclient
 
-This template should help get you started developing with Vue 3 in Vite.
+This is the Product List Webclient to display the list of product and update the product in bulk by uploading the Excel file.
 
 ## Recommended IDE Setup
 

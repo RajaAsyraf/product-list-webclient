@@ -6,12 +6,12 @@ import { ref } from 'vue'
 const uploadedFile = ref(null)
 const productTable = ref(null)
 
-const formData = new FormData()
 const handleUploadFile = async () => {
   if (uploadedFile.value.files[0] === undefined) {
     return
   }
 
+  const formData = new FormData()
   formData.append('product_sync_file', uploadedFile.value.files[0])
   await axios({
     method: 'post',
