@@ -2,6 +2,8 @@
 
 This is the Product List Webclient to display the list of product and update the product in bulk by uploading the Excel file.
 
+![alt text](product-list.gif)
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
@@ -11,6 +13,8 @@ This is the Product List Webclient to display the list of product and update the
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
+
+> Head over to the backend API installation before proceed to the steps below: <https://github.com/RajaAsyraf/product-list-api>
 
 ```sh
 npm install
